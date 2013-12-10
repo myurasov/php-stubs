@@ -1583,6 +1583,19 @@ class GearmanClient {
     public function doHigh($function_name, $workload, $unique = null) {}
 
     /**
+     * Runs a single task and returns a string representation of the result. 
+     * It is up to the GearmanClient and GearmanWorker to agree on the 
+     * format of the result.
+     *
+     * @link http://www.php.net/manual/en/gearmanclient.donormal.php
+     * @param string $function_name
+     * @param string $workload
+     * @param string $unique
+     * @return string A string representing the results of running a task
+     */
+    public function doNormal($function_name, $workload, $unique = null) {}
+    
+    /**
      * Runs a single low priority task and returns a string representation of the
      * result. It is up to the GearmanClient and GearmanWorker to agree on the format
      * of the result. Normal and high priority tasks will get precedence over low
